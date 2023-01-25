@@ -1,6 +1,7 @@
 package Homeworks.HW2;
 
 
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 import java.util.Scanner;
@@ -64,16 +65,35 @@ public class HW2 {
                 Напишите метод, который составит строку, состоящую из 100 повторений слова TEST и метод,\s
                 который запишет эту строку в простой текстовый файл, обработайте исключения.
                 """);
-        String testString = "TEST".repeat(100);
-        try (PrintWriter pw = new PrintWriter("file1.txt")){
-            System.out.println("Дело сделано");
-            pw.write(testString);
 
+        createFile();
+        writeFile();
+    }
+
+    private static void writeFile() {
+        String testString = "TEST".repeat(100);
+        try (PrintWriter pw = new PrintWriter("src/main/java/Homeworks/HW2/text.txt")){
+            pw.write(testString);
+            System.out.println("Запись добавлена");
         } catch (FileNotFoundException e) {
             e.printStackTrace();
-            System.out.println("Ничего не работает");
+            System.out.println("Запись не работает");
         }
-
     }
+
+    private static void createFile() {
+        File file = new File("src/main/java/Homeworks/HW2/text.txt");
+        try {
+            if (file.createNewFile()) {
+                System.out.println("Файл создан");
+            } else {
+                System.out.println("Файл уже существует");
+            }
+        } catch (Exception e){
+            System.out.println("Создание файла не работает");
+        }
+    }
+
+
 }
 
