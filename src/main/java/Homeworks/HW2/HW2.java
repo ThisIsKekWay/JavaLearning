@@ -74,6 +74,7 @@ public class HW2 {
         String testString = "TEST".repeat(100);
         try (PrintWriter pw = new PrintWriter("src/main/java/Homeworks/HW2/text.txt")){
             pw.write(testString);
+            pw.close();
             System.out.println("Запись добавлена");
         } catch (FileNotFoundException e) {
             e.printStackTrace();
