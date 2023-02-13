@@ -1,7 +1,7 @@
-package Homeworks.HW7;
+package Homeworks.HW7.Ex1;
 
 import java.util.Random;
-public class HW7 {
+public class HW7Ex1 {
         static Human h1;
         static Human h2;
         static Human h3;

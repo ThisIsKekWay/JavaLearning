@@ -1,4 +1,4 @@
-package Homeworks.HW7;
+package Homeworks.HW7.Ex1;
 
 import lombok.Getter;
 import lombok.Setter;

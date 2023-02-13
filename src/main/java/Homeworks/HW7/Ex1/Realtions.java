@@ -1,12 +1,8 @@
-package Homeworks.HW7;
+package Homeworks.HW7.Ex1;
 
-import java.util.Objects;
 
 public class Realtions {
     public void showRelations(Human h1, Human h2){
-        if (Objects.isNull(h1) || Objects.isNull(h2)){
-            System.out.println("Не выбран один из сопостовляемых людей");
-        }
         int ageGap = h1.getAge() - h2.getAge();
         if(ageGap >= 18){
             h1.setStatus("Родитель");
