@@ -29,10 +29,10 @@ public class HW7Ex2 {
             System.out.println("Введите номер действия:");
             String number = scan.nextLine();
             switch (number) {
-                case "1" -> Pet.call(o1, c1);
-                case "2" -> Pet.pet(o1, c1);
+                case "1" -> c1.call(o1, c1);
+                case "2" -> c1.pet(o1, c1);
                 case "3" -> {
-                    Owner.step(o1, c1);
+                    o1.step(o1, c1);
                     System.out.printf("%s сделал шаг к %s\n", o1.getName(), c1.getName());
                 }
                 default -> System.exit(0);

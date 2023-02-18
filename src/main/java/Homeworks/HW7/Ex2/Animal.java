@@ -1,10 +1,7 @@
 package Homeworks.HW7.Ex2;
 
 public  interface Animal {
-    public static void call(){
+    public void call(Owner owner, Pet pet);
 
-    }
-    public static void pet(){
-
-    }
+    public void pet(Owner owner, Pet pet);
 }

@@ -18,8 +18,9 @@ public class Owner extends Space implements Movable{
         System.out.println("Позиция хозяина: " + this.position);
     }
 
-    public static void step(Owner owner, Pet pet){
-        int gap = owner.getPosition() - pet.getPosition();
-        owner.setPosition(owner.getPosition() - gap / 2);
+    @Override
+    public void step(Space being1, Space being2) {
+        int gap = being1.getPosition() - being2.getPosition();
+        being1.setPosition(being1.getPosition() - gap / 2);
     }
 }

@@ -24,7 +24,8 @@ public class Pet extends Space implements Movable, Animal {
         System.out.println("Позиция питомца: " + this.position);
     }
 
-    public static void call(Owner owner, Pet pet) {
+    @Override
+    public void call(Owner owner, Pet pet) {
         int gap = owner.getPosition() - pet.getPosition();
         System.out.println("Кис-кис-кис");
         if (Math.abs(gap) > 50){
@@ -32,15 +33,16 @@ public class Pet extends Space implements Movable, Animal {
         } else {
             if (pet.getMood() == 0){
                 System.out.printf("Котик еле тащится на встречу к %s\n", owner.getName());
-                Pet.step(pet,owner);
+                pet.step(pet,owner);
             } else {
                 System.out.printf("Котик радостно бежит прямо к %s\n", owner.getName());
-                Pet.step(pet,owner);
+                pet.step(pet,owner);
             }
         }
     }
 
-    public static void pet(Owner owner, Pet pet) {
+    @Override
+    public void pet(Owner owner, Pet pet) {
         int gap = Math.abs(owner.getPosition() - pet.getPosition());
         if (gap < 10) {
             System.out.printf("Пытаемся погладить котика по имени %s\n", pet.getName());
@@ -54,12 +56,12 @@ public class Pet extends Space implements Movable, Animal {
         }
     }
 
-    public static void step(Pet pet, Owner owner) {
-        int gap = pet.getPosition() - owner.getPosition();
-        if (pet.mood == 0) {
-            pet.setPosition(pet.getPosition() - gap / 6);
+    public void step(Space being1, Space being2) {
+        int gap = being1.getPosition() - being2.getPosition();
+        if (this.mood == 0) {
+            being1.setPosition(being1.getPosition() - gap / 6);
         } else {
-            pet.setPosition(pet.getPosition() - gap / 3);
+            being1.setPosition(being1.getPosition() - gap / 3);
         }
     }
 }
