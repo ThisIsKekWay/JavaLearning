@@ -5,7 +5,7 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class Human {
+public class Human implements Tree{
     private String name;
     private int age;
     private String status;
