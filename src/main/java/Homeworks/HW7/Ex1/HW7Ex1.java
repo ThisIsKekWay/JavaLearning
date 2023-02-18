@@ -15,13 +15,12 @@ public class HW7Ex1 {
         h1.showInfo();
         h2.showInfo();
         h3.showInfo();
-
-        Realtions var = new Realtions();
-        var.showRelations(h1, h2);
-        var.showRelations(h1, h3);
-        var.showRelations(h2, h1);
-        var.showRelations(h2, h3);
-        var.showRelations(h3, h1);
-        var.showRelations(h3, h2);
+        
+        Human.showRelations(h1, h2);
+        Human.showRelations(h1, h3);
+        Human.showRelations(h2, h1);
+        Human.showRelations(h2, h3);
+        Human.showRelations(h3, h1);
+        Human.showRelations(h3, h2);
     }
 }
