@@ -43,7 +43,6 @@ public class Human implements Tree{
         }
 
         System.out.printf("%s %s %s\n", h1, h1.getStatus(), h2);
-
     }
 }
 

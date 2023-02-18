@@ -24,20 +24,6 @@ public class Pet extends Space implements Movable, Animal {
         System.out.println("Позиция питомца: " + this.position);
     }
 
-    public static void pet(Owner owner, Pet pet) {
-        int gap = Math.abs(owner.getPosition() - pet.getPosition());
-        if (gap < 10) {
-            System.out.printf("Пытаемся погладить котика по имени %s\n", pet.getName());
-            if (pet.getMood() == 0) {
-                System.out.printf("%s яростно хватает %s за руку и делает КУСЬ!\n", pet.getName(), owner.getName());
-            } else {
-                System.out.printf("%s дает %s себя погладить и мурлычет\n", pet.getName(), owner.getName());
-            }
-        } else {
-            System.out.printf("%s слишком далеко от %s. Возможно, стоит его подозвать?\n", pet.getName(), owner.getName());
-        }
-    }
-
     public static void call(Owner owner, Pet pet) {
         int gap = owner.getPosition() - pet.getPosition();
         System.out.println("Кис-кис-кис");
@@ -51,6 +37,20 @@ public class Pet extends Space implements Movable, Animal {
                 System.out.printf("Котик радостно бежит прямо к %s\n", owner.getName());
                 Pet.step(pet,owner);
             }
+        }
+    }
+
+    public static void pet(Owner owner, Pet pet) {
+        int gap = Math.abs(owner.getPosition() - pet.getPosition());
+        if (gap < 10) {
+            System.out.printf("Пытаемся погладить котика по имени %s\n", pet.getName());
+            if (pet.getMood() == 0) {
+                System.out.printf("%s яростно хватает %s за руку и делает КУСЬ!\n", pet.getName(), owner.getName());
+            } else {
+                System.out.printf("%s дает %s себя погладить и мурлычет\n", pet.getName(), owner.getName());
+            }
+        } else {
+            System.out.printf("%s слишком далеко от %s. Возможно, стоит его подозвать?\n", pet.getName(), owner.getName());
         }
     }
 
