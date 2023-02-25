@@ -1,11 +1,12 @@
 package Homeworks.HW10.Calculator;
 
-import java.io.IOException;
+import Homeworks.HW10.Calculator.presenter.Presenter;
+import Homeworks.HW10.Calculator.view.View;
 
-public class Main {
-    public static void main(String[] args) throws IOException {
-        Rationals r1 = new Rationals(12, 10);
-        Rationals r2 = new Rationals(8, 9);
+public class Main{
+    public static void main(String[] args){
+        Presenter pr = new Presenter(new View());
+        pr.buttonClick();
 
     }
 }

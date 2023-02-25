@@ -1,7 +1,7 @@
-package Homeworks.HW10.Calculator;
+package Homeworks.HW10.Calculator.model;
 
-public interface NODNOK {
-    public default int gcd(int a,int b) {
+public interface NodNok {
+    default int gcd(int a,int b) {
         while (b !=0) {
             int tmp = a%b;
             a = b;
@@ -10,7 +10,7 @@ public interface NODNOK {
         return a;
     }
 
-    public default int lcm(int a, int b){
+    default int lcm(int a, int b){
         return a * b / gcd(a, b);
     }
 }
